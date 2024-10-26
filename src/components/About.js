@@ -9,7 +9,9 @@ export default function About(props) {
   };
   return (
     <>
-      <h2 style = {{color: props.mode === "light" ? "black" : "white"}}>About {props.title}</h2>
+      <h2 style={{ color: props.mode === "light" ? "black" : "white" }}>
+        About {props.title}
+      </h2>
       <div className="my-3">
         <div className="accordion" id="accordionExample">
           <div className="accordion-item">
@@ -23,7 +25,7 @@ export default function About(props) {
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                Accordion Item #1
+                Text Conversion & Transformation
               </button>
             </h2>
             <div
@@ -35,15 +37,13 @@ export default function About(props) {
                 className="accordion-body"
                 style={props.mode === "light" ? lightMode : darkMode}
               >
-                <strong>This is the first item's accordion body.</strong> It is
-                shown by default, until the collapse plugin adds the appropriate
-                classNamees that we use to style each element. These classNamees
-                control the overall appearance, as well as the showing and
-                hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong>
+                  Allows users to toggle text between uppercase, lowercase, and
+                  title case.
+                </strong>{" "}
+                Provides a "Mirror" function to mirror the original text. Users
+                can also copy the transformed text to the clipboard with a
+                single click.
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ export default function About(props) {
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
-                Accordion Item #2
+                Text Analysis & Count
               </button>
             </h2>
             <div
@@ -70,15 +70,13 @@ export default function About(props) {
                 className="accordion-body"
                 style={props.mode === "light" ? lightMode : darkMode}
               >
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong>
+                  Displays real-time statistics of the entered text, including
+                  the number of characters, words, spaces, and special
+                  characters.
+                </strong>{" "}
+                Updates dynamically as the user types or makes changes, giving
+                instant feedback on text metrics.
               </div>
             </div>
           </div>
@@ -93,7 +91,7 @@ export default function About(props) {
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
-                Accordion Item #3
+                Live Preview Panel
               </button>
             </h2>
             <div
@@ -105,15 +103,13 @@ export default function About(props) {
                 className="accordion-body"
                 style={props.mode === "light" ? lightMode : darkMode}
               >
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong>
+                  Shows a preview of the transformed text as changes are made,
+                  making it easy to review and verify formatting and
+                  transformations.
+                </strong>{" "}
+                Supports an expandable view for large text inputs, allowing
+                users to focus on detailed text sections in real-time.
               </div>
             </div>
           </div>

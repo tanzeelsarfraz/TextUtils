@@ -49,7 +49,7 @@ export default function TextForm(props) {
     setShowTextDetails(false);
     props.showAlert("danger", "Text Cleared Successfully!");
   };
-  const handleRevertText = () => {
+  const handleMirrorText = () => {
     let str = "";
     for (let i = text.length - 1; i >= 0; i--) str += text[i];
     setText(str);
@@ -63,10 +63,20 @@ export default function TextForm(props) {
   };
   return (
     <>
-      <h2 style = {{color:props.mode.toLowerCase() === "light" ? "black": "white"}}>Enter Text to Analyze</h2>
+      <h2
+        style={{
+          color: props.mode.toLowerCase() === "light" ? "black" : "white",
+        }}
+      >
+        Enter Text to Analyze
+      </h2>
       <div className="mb-3">
-        <textarea style = {{backgroundColor: props.mode.toLowerCase() === "light" ? "white": "black", 
-        color: props.mode.toLowerCase() === "light" ? "black": "white"}}
+        <textarea
+          style={{
+            backgroundColor:
+              props.mode.toLowerCase() === "light" ? "white" : "black",
+            color: props.mode.toLowerCase() === "light" ? "black" : "white",
+          }}
           className="form-control"
           id="textArea"
           rows="10"
@@ -74,7 +84,12 @@ export default function TextForm(props) {
           onChange={handleTextChange}
           placeholder="Enter Text here"
         ></textarea>
-        <div className="text-sm-end fs-10 fw-lighter" style = {{color:props.mode.toLowerCase() === "light" ? "black": "white"}}>
+        <div
+          className="text-sm-end fs-10 fw-lighter"
+          style={{
+            color: props.mode.toLowerCase() === "light" ? "black" : "white",
+          }}
+        >
           {text.length} / {props.maxLength - 1}
         </div>
       </div>
@@ -98,9 +113,9 @@ export default function TextForm(props) {
         type="button"
         className="btn btn-warning btn-sm mx-1 my-1"
         disabled={text.length === 0}
-        onClick={handleRevertText}
+        onClick={handleMirrorText}
       >
-        Revert Text
+        Mirror Text
       </button>
       <button
         type="button"
@@ -135,7 +150,12 @@ export default function TextForm(props) {
         Show Text Details
       </button>
 
-      <div className="my-3 mx-1" style = {{color:props.mode.toLowerCase() === "light" ? "black": "white"}}>
+      <div
+        className="my-3 mx-1"
+        style={{
+          color: props.mode.toLowerCase() === "light" ? "black" : "white",
+        }}
+      >
         {showTextDetails && (
           <div>
             <h3>Your Text Summary</h3>
