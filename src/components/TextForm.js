@@ -160,7 +160,7 @@ export default function TextForm(props) {
           <div>
             <h3>Your Text Summary</h3>
             <p>
-              Number of Words: {text.split(" ").filter((x) => x !== "").length}
+              Number of Words: {text.split(/\s+/).filter((x) => x !== "").length}
             </p>
             <p>Number of Spaces: {countSpaces(text)}</p>
             <p>Number of Special Charaters: {countSpecialCharacters(text)}</p>
