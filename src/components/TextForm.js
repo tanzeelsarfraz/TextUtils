@@ -35,14 +35,15 @@ export default function TextForm(props) {
     setPreviewText(true);
     props.showAlert("primary", "Previewing Text!");
   };
-  const handleUpperCase = () => {
-    setText(text.toUpperCase());
-    props.showAlert("success", "Text Converted to Upper Case Successfully!");
-  };
-  const handleLowerCase = () => {
-    setText(text.toLowerCase());
-    props.showAlert("success", "Text Converted to Lower Case Successfully!");
-  };
+  const handleCase = (caseType) => {
+    if(caseType.toLowerCase() === "upper"){
+      setText(text.toUpperCase());
+    }
+    else if(caseType.toLowerCase() === "lower"){
+      setText(text.toLowerCase());
+    }
+    props.showAlert("success", `Text Converted to ${caseType} Case Successfully!`);
+  }
   const handleClearText = () => {
     setText("");
     setPreviewText(false);
@@ -97,7 +98,7 @@ export default function TextForm(props) {
         type="button"
         className="btn btn-primary btn-sm mx-1 my-1"
         disabled={text.length === 0}
-        onClick={handleUpperCase}
+        onClick={() => handleCase("Upper")}
       >
         Convert To Upper Case
       </button>
@@ -105,7 +106,7 @@ export default function TextForm(props) {
         type="button"
         className="btn btn-secondary btn-sm mx-1 my-1"
         disabled={text.length === 0}
-        onClick={handleLowerCase}
+        onClick={() => handleCase("Lower")}
       >
         Convert To Lower Case
       </button>
